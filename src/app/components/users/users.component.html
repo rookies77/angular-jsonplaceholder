@@ -1,0 +1,25 @@
+
+<a routerLink="/">Accueil</a>
+<div *ngFor="let user of users" class="card" style="width: 18rem;margin: 1rem;">
+  <div>
+    <p>Nom: {{user.name}}
+    <p>Pseudo: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+  </div>
+  <div>
+    <p> Tel: {{ user.phone }}</p>
+    <p>Site Web: {{user.website}}</p>
+  </div>
+
+</div>
+<div class="card" *ngIf="id">
+  <div>
+    <p>Nom: {{user.name}}
+    <p>Pseudo: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+  </div>
+  <div>
+    <p> Tel: {{ user.phone }}</p>
+    <p>Site Web: {{user.website}}</p>
+  </div>
+</div>
