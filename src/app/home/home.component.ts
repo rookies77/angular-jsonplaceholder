@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router} from '@angular/router'
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router'
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,25 +9,31 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-userForm!: string;
-  constructor(private userService: UserService, private router: Router) { }
+  userForm!: string;
+  photoForm!: FormGroup;
+  constructor(private userService: UserService, private router: Router, private formBuild: FormBuilder) { }
 
   ngOnInit(): void {
-
+    this.photoForm = this.formBuild.group({
+      photo: ['', Validators.required]
+    })
   }
 
 
   onSubmitUser(form: NgForm) {
-console.log(form.value['users']);
-console.log(form.value);
-const id = form.value.users
-if(id ==''){
+    const id = form.value.users
+    if (id == '') {
+      this.router.navigate(['/users'])
+    } else {
+      // this.userService.getOneUser(id)
+      this.router.navigate(['/users/', id])
+    }
 
-  this.router.navigate(['/users'])
-}else{
-  // this.userService.getOneUser(id)
-  this.router.navigate(['/users/', id])
-}
-
+  }
+  onSubmitPhoto() {
+    const photoid = this.photoForm.get('photo')?.value;
+    if (!isNaN(photoid) && photoid !== '') {
+      this.router.navigate(['photo/', photoid])
+    }
   }
 }

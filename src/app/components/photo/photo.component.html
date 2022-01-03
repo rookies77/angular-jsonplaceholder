@@ -1,0 +1,7 @@
+
+<h1>Photo selection numéro : {{ id }}</h1>
+
+<div *ngIf="photoInfo">
+  <p> Titre de la photo : {{ photoInfo.title }}</p>
+  <img [src]="photoInfo.url" alt="photo">
+</div>

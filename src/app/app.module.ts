@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { PhotoService } from './services/photo.service';
 import { PostService } from './services/post.service';
+import { PhotoComponent } from './components/photo/photo.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { PostService } from './services/post.service';
     AppComponent,
     HomeComponent,
     UsersComponent,
+    PhotoComponent,
   ],
   imports: [
     BrowserModule,
