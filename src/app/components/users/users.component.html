@@ -1,6 +1,8 @@
 <a routerLink="/">Accueil</a>
-<div *ngIf="users">
-  <div *ngFor="let user of users" class="card" style="width: 18rem;margin: 1rem;">
+<div *ngIf="users" class="container">
+ <h1> Tout les Utilisateurs de la liste</h1>
+  <br>
+  <div *ngFor="let user of users" class="card user-contain"  >
     <div>
       <p>Nom: {{user.name}}
       <p>Pseudo: {{ user.username }}</p>

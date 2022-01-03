@@ -1,0 +1,14 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  h1{
+    width: 100%;
+    text-align: center;
+  }
+}
+.user-contain{
+  width: 45%;
+  margin: 1rem;
+  text-align: center;
+}
