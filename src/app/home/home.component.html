@@ -1,29 +1,30 @@
-<h1>Angular JsonplaceHolder</h1>
+<h1 class="text-center">Angular JsonplaceHolder</h1>
+<div class="d-flex justify-content-around mt-4">
+  <div>
+    <form (ngSubmit)="onSubmitUser(f)" #f="ngForm">
+      <label for="users">Selectionner un Utilisateur avec la méthode <span>"Template-Driven Forms"</span> </label>
+      <select name="users" id="users" class="form-control" ngModel>
+        <option value="">All</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
+  </div>
+  <div>
+    <form [formGroup]="photoForm" (ngSubmit)="onSubmitPhoto()">
+      <label for="photo">Choisir un nombre 1 et 5000 avec la methode <span>"reactive form"</span> </label>
+      <br>
+      <input type="text" id="photo" name="photo" formControlName="photo" class="form-control">
+      <input type="submit" value="Valider" class="btn btn-primary">
 
-<div>
-  <form (ngSubmit)="onSubmitUser(f)" #f="ngForm">
-    <label for="users">Selectionner un Utilisateur avec la méthode <span>"Template-Driven Forms"</span> </label>
-    <select name="users" id="users" class="form-control w-25" ngModel>
-      <option value="">All</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-    </select>
-    <button type="submit" class="btn btn-primary">Valider</button>
-  </form>
-</div>
-<div>
-  <form [formGroup]="photoForm" (ngSubmit)="onSubmitPhoto()">
-    <label for="photo">Choisir un nombre 1 et 5000 avec la methode <span>"reactive form"</span> </label>
-    <br>
-    <input type="text" id="photo" name="photo" formControlName="photo" class="form-control w-25">
-    <input type="submit" value="Valider" class="btn btn-primary">
-
-  </form>
+    </form>
+  </div>
 </div>

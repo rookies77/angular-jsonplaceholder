@@ -10,8 +10,10 @@ import { UsersComponent } from './components/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { PhotoService } from './services/photo.service';
-import { PostService } from './services/post.service';
 import { PhotoComponent } from './components/photo/photo.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PostsComponent } from './components/posts/posts.component';
 
 
 @NgModule({
@@ -20,6 +22,9 @@ import { PhotoComponent } from './components/photo/photo.component';
     HomeComponent,
     UsersComponent,
     PhotoComponent,
+    HeaderComponent,
+    NotFoundComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,7 @@ import { PhotoComponent } from './components/photo/photo.component';
     CommonModule,
     HttpClientModule
   ],
-  providers: [UserService, PhotoService, PostService],
+  providers: [UserService, PhotoService, PostsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
