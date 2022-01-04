@@ -1,7 +1,11 @@
-
-<h1>Photo selection numéro : {{ id }}</h1>
+<div>
+  <p>Un nombre aléatoire</p>
+  <button (click)="randomNumber()" class="btn btn-succes">Random</button>
+</div>
+<h2>Photo selection numéro : {{ photoInfo.id }}</h2>
 
 <div *ngIf="photoInfo">
   <p> Titre de la photo : {{ photoInfo.title }}</p>
   <img [src]="photoInfo.url" alt="photo">
 </div>
+

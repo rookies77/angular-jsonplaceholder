@@ -9,17 +9,18 @@ import { PostModel } from '../components/models/post.model';
 export class PostsService {
 
 
-postURL = 'https://jsonplaceholder.typicode.com/posts';
+  postURL = 'https://jsonplaceholder.typicode.com/posts';
 
 
   constructor(private http: HttpClient) { }
 
 
-getAllPosts(): Observable<PostModel[]>{
-  return this.http.get<PostModel[]>(this.postURL)
-}
-getOnePost(id: number): Observable<PostModel>{
-  return this.http.get<PostModel>(`${this.postURL}/${id}`)
-}
+  getAllPosts(): Observable<PostModel[]> {
+    return this.http.get<PostModel[]>(this.postURL)
+  }
+
+  getOnePost(id: number): Observable<PostModel> {
+    return this.http.get<PostModel>(`${this.postURL}/${id}`)
+  }
 
 }
