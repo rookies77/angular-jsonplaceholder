@@ -11,8 +11,7 @@ export class PhotoService {
 photoURL: string = 'https://jsonplaceholder.typicode.com/photos'
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
-  getPicture(id:number | ''): Observable<PhotoModel>{
-    // const id = this.route.snapshot.params['id']
+  getPicture(id:number): Observable<PhotoModel>{
     console.log(' id:', id);
     return this.http.get<PhotoModel>(`${this.photoURL}/${id}`)
   }

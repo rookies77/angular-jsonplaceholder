@@ -11,12 +11,17 @@ import { UserService } from '../services/user.service';
 export class HomeComponent implements OnInit {
   userForm!: string;
   photoForm!: FormGroup;
+  error: boolean = false;
+  maxNumber!: boolean;
+
+
   constructor(private userService: UserService, private router: Router, private formBuild: FormBuilder) { }
 
   ngOnInit(): void {
     this.photoForm = this.formBuild.group({
       photo: ['', Validators.required]
     })
+    console.log('this.error :', this.error);
   }
 
 
@@ -32,8 +37,13 @@ export class HomeComponent implements OnInit {
   }
   onSubmitPhoto() {
     const photoid = this.photoForm.get('photo')?.value;
-    if (!isNaN(photoid) && photoid !== '') {
+    this.error = isNaN(photoid) ;
+    this.maxNumber = photoid>=5000;
+
+    console.log('  this.maxNumber :',  this.maxNumber );
+    console.log(' this.error :',  this.error);
+    if (!isNaN(photoid) && photoid !== '' && photoid <= 5000)
       this.router.navigate(['photo/', photoid])
-    }
+
   }
 }

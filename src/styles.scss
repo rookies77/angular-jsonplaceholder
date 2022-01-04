@@ -11,5 +11,9 @@ ul li{
   list-style: none;
 }
 a{
-color: unset;
+color: $color-2;
+&:hover{
+  text-decoration: unset;
+  color: #dbb4aa;
+}
 }

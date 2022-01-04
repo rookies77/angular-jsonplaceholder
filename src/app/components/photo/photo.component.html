@@ -1,11 +1,14 @@
-<div>
-  <p>Un nombre aléatoire</p>
-  <button (click)="randomNumber()" class="btn btn-succes">Random</button>
-</div>
-<h2>Photo selection numéro : {{ photoInfo.id }}</h2>
+<div class="container text-center">
+  <div class="title">
+    <h1>Un nombre aléatoire</h1>
+    <button (click)="randomNumber()" class="btn btn-succes">Random</button>
+  </div>
+  <h2 *ngIf="photoInfo">Photo selection numéro : {{ photoInfo.id }}</h2>
 
-<div *ngIf="photoInfo">
-  <p> Titre de la photo : {{ photoInfo.title }}</p>
-  <img [src]="photoInfo.url" alt="photo">
-</div>
+  <div *ngIf="photoInfo">
+    <p> Titre de la photo : {{ photoInfo.title }}</p>
+    <img [src]="photoInfo.url" alt="photo">
+  </div>
 
+
+</div>

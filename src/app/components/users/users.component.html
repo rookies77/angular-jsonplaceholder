@@ -1,8 +1,22 @@
+<div class="container">
+  <div *ngIf="users" class="w-100 user_container">
+    <h1>Liste de tout les Utilisateurs</h1>
+    <br>
+    <div *ngFor="let user of users" class="card user-contain">
+      <div>
+        <p>Nom: {{user.name}}
+        <p>Pseudo: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+      </div>
+      <div>
+        <p> Tel: {{ user.phone }}</p>
+        <p>Site Web: {{user.website}}</p>
+      </div>
 
-<div *ngIf="users" class="container">
- <h1>Liste de tout les Utilisateurs</h1>
-  <br>
-  <div *ngFor="let user of users" class="card user-contain"  >
+    </div>
+  </div>
+
+  <div class="card single_card" *ngIf="user">
     <div>
       <p>Nom: {{user.name}}
       <p>Pseudo: {{ user.username }}</p>
@@ -12,18 +26,10 @@
       <p> Tel: {{ user.phone }}</p>
       <p>Site Web: {{user.website}}</p>
     </div>
+  </div>
+  <div class="users_link">
+    <a routerLink="/users">Retour à la liste des users</a>
+    <a routerLink="/">Accueil</a>
+  </div>
 
-  </div>
-</div>
-
-<div class="card" *ngIf="user">
-  <div>
-    <p>Nom: {{user.name}}
-    <p>Pseudo: {{ user.username }}</p>
-    <p>Email: {{ user.email }}</p>
-  </div>
-  <div>
-    <p> Tel: {{ user.phone }}</p>
-    <p>Site Web: {{user.website}}</p>
-  </div>
 </div>
