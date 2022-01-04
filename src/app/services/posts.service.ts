@@ -18,6 +18,8 @@ postURL = 'https://jsonplaceholder.typicode.com/posts';
 getAllPosts(): Observable<PostModel[]>{
   return this.http.get<PostModel[]>(this.postURL)
 }
-
+getOnePost(id: number): Observable<PostModel>{
+  return this.http.get<PostModel>(`${this.postURL}/${id}`)
+}
 
 }

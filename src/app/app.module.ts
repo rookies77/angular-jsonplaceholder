@@ -14,6 +14,7 @@ import { PhotoComponent } from './components/photo/photo.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { PostComponent } from './components/posts/post/post.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { PostsComponent } from './components/posts/posts.component';
     HeaderComponent,
     NotFoundComponent,
     PostsComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,12 @@
   max-width: 18rem;
   margin: 1rem .5rem;
   padding: 1rem;
+  a{
+    cursor: pointer;
+    &:hover{
+      opacity: .7;
+    }
+  }
 }
 h3{
   width: 100%;

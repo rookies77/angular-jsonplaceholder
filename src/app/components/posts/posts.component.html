@@ -1,9 +1,10 @@
 <div class="container d-flex flex-wrap justify-content-around">
   <h3>Affichage des commentaires depuis l'api JsonplaceHolder</h3>
   <div class="post-contain card" *ngFor="let post of postUsers">
-   <a (click)="getPost(post.id)"><h5>{{ post.body }}</h5>
-    <p>{{ post.title }}</p>
-  </a>
+    <a (click)="getPosts(post.id)">
+      <h5>{{ post.id }} - {{ post.body }}</h5>
+      <p>{{ post.title }}</p>
+    </a>
 
   </div>
 </div>

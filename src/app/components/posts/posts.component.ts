@@ -23,8 +23,9 @@ export class PostsComponent implements OnInit {
     })
   }
 
-  getPost(id: number) {
-    console.log(id);
-
+  getPosts(id: any) {
+    // const id = this.route.snapshot.params['id']
+    console.log((id));
+this.router.navigate(['/posts', id])
   }
 }

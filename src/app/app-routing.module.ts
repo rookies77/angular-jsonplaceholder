@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PhotoComponent } from './components/photo/photo.component';
+import { PostComponent } from './components/posts/post/post.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { UsersComponent } from './components/users/users.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'photo', component: PhotoComponent},
   {path: 'posts', component: PostsComponent},
   {path: 'photo/:id', component: PhotoComponent},
+  {path: 'posts/:id', component: PostComponent},
   {path: '', redirectTo:'home', pathMatch: 'full'},
   {path: '**', component: NotFoundComponent}
 ];
