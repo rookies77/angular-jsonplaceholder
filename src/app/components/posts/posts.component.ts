@@ -6,26 +6,29 @@ import { PostModel } from '../models/post.model';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.scss']
+  styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent implements OnInit {
-
-  constructor(private postsService: PostsService, private router: Router, private route: ActivatedRoute) { }
+  para!: any;
+  constructor(
+    private postsService: PostsService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
   postUsers!: PostModel[];
   ngOnInit(): void {
-    this.getPostAllUser()
+    this.getPostAllUser();
   }
 
   getPostAllUser() {
     this.postsService.getAllPosts().subscribe((data) => {
-      console.log(data);
-      this.postUsers = data
-    })
+      this.postUsers = data;
+    });
   }
 
   getPosts(id: any) {
     // const id = this.route.snapshot.params['id']
-    console.log((id));
-this.router.navigate(['/posts', id])
+    console.log(id);
+    this.router.navigate(['/posts', id]);
   }
 }

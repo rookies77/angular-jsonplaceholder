@@ -10,6 +10,8 @@ import { PostModel } from '../../models/post.model';
 })
 export class PostComponent implements OnInit {
   post!: PostModel;
+  para!: any;
+
   constructor(private postsService: PostsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

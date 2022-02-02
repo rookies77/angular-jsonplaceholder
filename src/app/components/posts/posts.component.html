@@ -1,10 +1,15 @@
-<div class="container d-flex flex-wrap justify-content-around">
+<div class="container d-flex flex-wrap justify-content-around posts_container" *ngIf="postUsers">
   <h3>Affichage des commentaires depuis l'api JsonplaceHolder</h3>
-  <div class="post-contain card" *ngFor="let post of postUsers">
-    <a (click)="getPosts(post.id)">
-      <h5>{{ post.id }} - {{ post.body }}</h5>
-      <p>{{ post.title }}</p>
-    </a>
+  <div class="posts_wrapper" style="width: 100%;">
+    <div class="post-contain card" *ngFor="let post of postUsers | paginate: {itemsPerPage: 6, currentPage: para  } ">
+      <a (click)="getPosts(post.id)">
+        <h5>{{ post.id }} - {{ post.body }}</h5>
+        <p>{{ post.title }}</p>
+      </a>
 
+
+    </div>
   </div>
+
+  <pagination-controls (pageChange)="para = $event"></pagination-controls>
 </div>
